@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HAQQTECHREPAIRS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #002b5c;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .menu button {
+      background: #ffa500;
+      color: #002b5c;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .section {
+      background: #fff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #002b5c;
+    }
+    .price {
+      background: #ffe5b4;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    select {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact {
+      margin: 20px;
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 15px;
+      background: #002b5c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .contact a:hover {
+      background: #ffa500;
+      color: #002b5c;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="menu">
+    <button onclick="showFaults()">Other Faults</button>
+  </div>
+  <h1>HAQQTECHREPAIRS</h1>
+  <p>We Repair. We Bypass. We Empower.</p>
+</header>
+
+<!-- iOS Section -->
+<div class="section">
+  <h2>iOS Devices</h2>
+  <label for="ios-select">Select your iPhone model:</label>
+  <select id="ios-select" onchange="showIosPrice()">
+    <option value="">-- Choose Model --</option>
+    <option value="150">iPhone 5 / 5s / 5c / 6</option>
+    <option value="350">iPhone 6s / 7 / 7 Plus / 8 / 8 Plus</option>
+    <option value="500">iPhone X / XR / XS / XS Max</option>
+    <option value="700">iPhone 11 / 12 / 13 (all)</option>
+    <option value="1000">iPhone 14 / 15 / 16+</option>
+  </select>
+  <div id="ios-price" class="price"></div>
+</div>
+
+<!-- Android Section -->
+<div class="section">
+  <h2>Android Devices</h2>
+  <label for="android-select">Select your Android brand:</label>
+  <select id="android-select" onchange="showAndroidPrice()">
+    <option value="">-- Choose Brand --</option>
+    <option value="100">Samsung</option>
+    <option value="100">Tecno</option>
+    <option value="100">Itel</option>
+    <option value="100">Infinix</option>
+    <option value="100">Huawei</option>
+    <option value="100">Xiaomi</option>
+    <option value="100">Oppo</option>
+    <option value="100">Vivo</option>
+    <option value="100">Realme</option>
+    <option value="100">Nokia</option>
+    <option value="100">LG</option>
+    <option value="100">Sony Xperia</option>
+    <option value="100">HTC</option>
+    <option value="100">Lenovo</option>
+    <option value="100">Motorola</option>
+    <option value="100">ZTE</option>
+    <option value="100">Alcatel</option>
+    <option value="100">Google Pixel</option>
+    <option value="100">Honor</option>
+    <option value="100">OnePlus</option>
+    <option value="100">Asus</option>
+    <option value="100">Meizu</option>
+    <option value="100">Micromax</option>
+    <option value="100">Lava</option>
+    <option value="100">Gionee</option>
+    <option value="100">Coolpad</option>
+    <option value="100">Ulefone</option>
+    <option value="100">Elephone</option>
+    <option value="100">Blackview</option>
+    <option value="100">Cubot</option>
+    <option value="100">Umidigi</option>
+    <option value="100">Blu</option>
+    <option value="100">Wiko</option>
+    <option value="100">Hisense</option>
+    <option value="100">Amazon Fire Phone</option>
+    <option value="100">Other (type below)</option>
+  </select>
+  <div id="android-price" class="price"></div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact">
+  <h2>Contact Us</h2>
+  <a href="https://wa.me/233257656359" target="_blank">Chat on WhatsApp</a>
+  <a href="tel:+233257656359">Call Us</a>
+  <a href="mailto:issakahaqq529@gmail.com">Email: issakahaqq529@gmail.com</a>
+  <a href="mailto:isskakhaqq62@gmail.com">Email: isskakhaqq62@gmail.com</a>
+</div>
+
+<script>
+  function showIosPrice() {
+    const price = document.getElementById("ios-select").value;
+    const display = document.getElementById("ios-price");
+    if (price) {
+      display.innerHTML = `Bypass/Flash Price: <strong>${price} GHS</strong>`;
+    } else {
+      display.innerHTML = "";
+    }
+  }
+
+  function showAndroidPrice() {
+    const price = document.getElementById("android-select").value;
+    const display = document.getElementById("android-price");
+    if (price) {
+      display.innerHTML = `Flash Price: <strong>${price} GHS</strong>`;
+    } else {
+      display.innerHTML = "";
+    }
+  }
+
+  function showFaults() {
+    const fault = prompt("Select a fault or type your issue:\n1. Phone not working\n2. Not charging\n3. Broken screen\n4. Battery issues\n5. Overheating\n6. Camera problems\n7. Touchscreen not responding\n8. Other...");
+    if (fault) {
+      alert("Would you like to send this via WhatsApp or Email?\nWhatsApp: 0257656359\nEmail: issakahaqq529@gmail.com or isskakhaqq62@gmail.com");
+    }
+  }
+</script>
+
+</body>
+</html>
